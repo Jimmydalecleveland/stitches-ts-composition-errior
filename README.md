@@ -12,3 +12,13 @@ A screenshot of the VSCode error:
 ![](./ts-error.png)
 
 When bundling with Typescript or running `tsc`, no error was produced for me. This lead me to believe it was just some VS Code issue, but Webstorm also produced the error. I've found this error in various Github issues but usually not with Stitches. MUI seemed to have the problem once, and Stitches has a closed issue that was fixed when going from beta to v1.
+
+## Potential Solution
+
+I've found that commenting out the following line from the `tsconfig.json` causes the error to go away:
+
+```json
+"lib": [
+  "ES2015"
+]
+```
